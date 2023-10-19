@@ -1,0 +1,63 @@
+[
+    {
+      "Image": "https://i.ibb.co/JFVNRgJ/pexels-photo-119435.jpg",
+      "Name": "Toyota Camry",
+      "Brand Name": "Toyota",
+      "Type": "Automobile",
+      "Price": "$25,000",
+      "Rating": 4.5,
+      "Details button": "View Details",
+      "Update button": "Update"
+    },
+    {
+      "Image": "https://i.ibb.co/2hL3Mt5/pexels-photo-100653.jpg",
+      "Name": "Ford Mustang",
+      "Brand Name": "Ford",
+      "Type": "Automobile",
+      "Price": "$30,000",
+      "Rating": 4.7,
+      "Details button": "View Details",
+      "Update button": "Update"
+    },
+    {
+      "Image": "https://i.ibb.co/GnQm5cR/pexels-photo-116675.jpg",
+      "Name": "BMW 3 Series",
+      "Brand Name": "BMW",
+      "Type": "Automobile",
+      "Price": "$40,000",
+      "Rating": 4.8,
+      "Details button": "View Details",
+      "Update button": "Update"
+    },
+    {
+      "Image": "https://i.ibb.co/LYLFJtg/pexels-photo-1007410.jpg",
+      "Name": "Mercedes-Benz E-Class",
+      "Brand Name": "Mercedes-Benz",
+      "Type": "Automobile",
+      "Price": "$50,000",
+      "Rating": 4.9,
+      "Details button": "View Details",
+      "Update button": "Update"
+    },
+    {
+      "Image": "https://i.ibb.co/yF6rTwN/pexels-photo-810357.webp",
+      "Name": "Tesla Model 3",
+      "Brand Name": "Tesla",
+      "Type": "Automobile",
+      "Price": "$45,000",
+      "Rating": 4.6,
+      "Details button": "View Details",
+      "Update button": "Update"
+    },
+    {
+      "Image": "https://i.ibb.co/1XQV4MX/pexels-photo-2036544.jpg",
+      "Name": "Honda Civic",
+      "Brand Name": "Honda",
+      "Type": "Automobile",
+      "Price": "$20,000",
+      "Rating": 4.4,
+      "Details button": "View Details",
+      "Update button": "Update"
+    }
+  ]
+  
