@@ -1,3 +1,5 @@
+import GoogleLogin from "../../components/googleLogin/GoogleLogin";
+
 const Register = () => {
   return (
     <div>
@@ -65,6 +67,7 @@ const Register = () => {
           </div>
         </div>
       </div>
+      <GoogleLogin></GoogleLogin>
     </div>
   );
 };
