@@ -2,7 +2,7 @@
 
 const OurUsedCar = () => {
     return (
-        <div>
+        <div className="">
             <h1 className="text-7xl font-bold p-10">Our Used Cars Collection</h1>
             <div className=" pb-10 grid grid-cols-3 gap-10">
                 <img src="https://i.ibb.co/BfyGjN6/istockphoto-157293636-612x612.jpg" alt="" />
