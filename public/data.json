@@ -1,63 +1,68 @@
 [
-    {
-      "Image": "https://i.ibb.co/JFVNRgJ/pexels-photo-119435.jpg",
+  {
+      "id": 1,
+      "Image": "https://i.ibb.co/XCjv58S/75b6d8e92309c1d010c98f8d7592305b.jpg",
       "Name": "Toyota Camry",
-      "Brand Name": "Toyota",
+      "BrandName": "Toyota",
       "Type": "Automobile",
       "Price": "$25,000",
       "Rating": 4.5,
       "Details button": "View Details",
       "Update button": "Update"
-    },
-    {
-      "Image": "https://i.ibb.co/2hL3Mt5/pexels-photo-100653.jpg",
+  },
+  {
+      "id": 2,
+      "Image": "https://i.ibb.co/St8kTRj/31158b7fd6b665dc137abf4d6700e3d6.jpg",
       "Name": "Ford Mustang",
-      "Brand Name": "Ford",
+      "BrandName": "Ford",
       "Type": "Automobile",
       "Price": "$30,000",
       "Rating": 4.7,
       "Details button": "View Details",
       "Update button": "Update"
-    },
-    {
-      "Image": "https://i.ibb.co/GnQm5cR/pexels-photo-116675.jpg",
+  },
+  {
+      "id": 3,
+      "Image": "https://i.ibb.co/Vg96hnp/web-136350854.webp",
       "Name": "BMW 3 Series",
-      "Brand Name": "BMW",
+      "BrandName": "BMW",
       "Type": "Automobile",
       "Price": "$40,000",
       "Rating": 4.8,
       "Details button": "View Details",
       "Update button": "Update"
-    },
-    {
-      "Image": "https://i.ibb.co/LYLFJtg/pexels-photo-1007410.jpg",
+  },
+  {
+      "id": 4,
+      "Image": "https://i.ibb.co/whJ38xk/9c54cfd5630ebd31b37bfcbd27f69048.jpg",
       "Name": "Mercedes-Benz E-Class",
-      "Brand Name": "Mercedes-Benz",
+      "BrandName": "Mercedes-Benz",
       "Type": "Automobile",
       "Price": "$50,000",
       "Rating": 4.9,
       "Details button": "View Details",
       "Update button": "Update"
-    },
-    {
-      "Image": "https://i.ibb.co/yF6rTwN/pexels-photo-810357.webp",
+  },
+  {
+      "id": 5,
+      "Image": "https://i.ibb.co/F6gM46F/depositphotos-652854188-stock-illustration-tesla-logo-vector-illustration.webp",
       "Name": "Tesla Model 3",
-      "Brand Name": "Tesla",
+      "BrandName": "Tesla",
       "Type": "Automobile",
       "Price": "$45,000",
       "Rating": 4.6,
       "Details button": "View Details",
       "Update button": "Update"
-    },
-    {
-      "Image": "https://i.ibb.co/1XQV4MX/pexels-photo-2036544.jpg",
+  },
+  {
+      "id": 6,
+      "Image": "https://i.ibb.co/vs97sgP/9088a9cdcf4bf9daaa774f4643ba4a4a.jpg",
       "Name": "Honda Civic",
-      "Brand Name": "Honda",
+      "BrandName": "Honda",
       "Type": "Automobile",
       "Price": "$20,000",
       "Rating": 4.4,
       "Details button": "View Details",
       "Update button": "Update"
-    }
-  ]
-  
+  }
+]
