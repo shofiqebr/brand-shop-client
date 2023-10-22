@@ -1,6 +1,43 @@
+/* eslint-disable no-undef */
+import { useContext,  } from "react";
 import GoogleLogin from "../../components/googleLogin/GoogleLogin";
+import { AuthContext } from "../../authProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 const Register = () => {
+  const {createUser} = useContext(AuthContext);
+  
+
+
+  const handleSubmit = event =>{
+    event.preventDefault();
+     const form = event.target;
+     const name = form.name.value;
+     const password = form.password.value;
+     const email = form.email.value;
+     const photo = form.photo.value;
+     console.log(email,name,password,photo);
+
+     if (password.length<6){
+      toast.error('Password must be at least 6 characters long.');
+      return;
+     }
+
+     if (!/[A-Z]/.test(password)) {
+      toast.error('Password must contain at least one capital letter.');
+      return;
+    }
+
+    if (!/[!@#$%^&*()_+{}[\]:;<>,.?~\\/-]/.test(password)) {
+      toast.error('Password must contain at least one special character.');
+      return;
+    }
+    createUser(email,password)
+    .then(res => console.log(res.user))
+    .catch(error=>console.log(error))
+
+ 
+  };
   return (
     <div>
 
@@ -10,13 +47,14 @@ const Register = () => {
           
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="text-center text-3xl font-semibold pt-5">Please Register</div>
-            <form className="card-body">
+            <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Full Name</span>
                 </label>
                 <input
                   type="text"
+                  name='name'
                   placeholder="Full name"
                   className="input border-indigo-600 bg-slate-100"
                   required
@@ -28,6 +66,7 @@ const Register = () => {
                 </label>
                 <input
                   type="email"
+                  name='email'
                   placeholder="email"
                   className="input border-indigo-600 bg-slate-100"
                   required
@@ -39,6 +78,7 @@ const Register = () => {
                 </label>
                 <input
                   type="photo"
+                  name="photo"
                   placeholder="image url"
                   className="input border-indigo-600 bg-slate-100"
                   required
@@ -50,6 +90,7 @@ const Register = () => {
                 </label>
                 <input
                   type="password"
+                  name='password'
                   placeholder="password"
                   className="input border-indigo-600 bg-slate-100"
                   required
@@ -61,7 +102,7 @@ const Register = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Register</button>
+                <button type='submit' className="btn btn-primary">Register</button>
               </div>
             </form>
           </div>

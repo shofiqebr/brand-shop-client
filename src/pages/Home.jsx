@@ -1,5 +1,5 @@
-// import Banner from "../banner/Banner";
-// import BrandNames from "../brandNames/BrandNames";
+
+
 import Banner from "../components/banner/Banner";
 import BrandNames from "../components/brandNames/BrandNames";
 import OurUsedCar from "../components/ourUsedCar/OurUsedCar";
