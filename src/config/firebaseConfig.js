@@ -5,13 +5,17 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+console.log('inside',import.meta.env.VITE_PASS);
+
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCCqHxthSvgS-zHn0Mvlm2tih_2Yy7pIaw",
-  authDomain: "automotive-brand-shop-client.firebaseapp.com",
-  projectId: "automotive-brand-shop-client",
-  storageBucket: "automotive-brand-shop-client.appspot.com",
-  messagingSenderId: "257539606778",
-  appId: "1:257539606778:web:11a53b4180527c705ee143"
+  apiKey:import.meta.env.VITE_APIKEY,
+  authDomain:import.meta.env.VITE_AUTHDOMAIN,
+  projectId:import.meta.env.VITE_PROJECTID,
+  storageBucket:import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
+  appId:import.meta.env.VITE_APPID,
 };
 
 // Initialize Firebase
