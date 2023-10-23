@@ -44,7 +44,6 @@ const Register = () => {
 
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col  w-full lg:flex-row-reverse">
-          
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <div className="text-center text-3xl font-semibold pt-5">Please Register</div>
             <form onSubmit={handleSubmit} className="card-body">
@@ -104,11 +103,11 @@ const Register = () => {
               <div className="form-control mt-6">
                 <button type='submit' className="btn btn-primary">Register</button>
               </div>
+      <GoogleLogin></GoogleLogin>
             </form>
           </div>
         </div>
       </div>
-      <GoogleLogin></GoogleLogin>
     </div>
   );
 };
