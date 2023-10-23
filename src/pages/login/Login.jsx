@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import GoogleLogin from "../../components/googleLogin/GoogleLogin";
 import { AuthContext } from "../../authProvider/AuthProvider";
+import { Navigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 
 const Login = () => {
@@ -18,10 +20,11 @@ const handleSubmit = event =>{
 
    signIn(email, password)
    .then(res => {
-     console.log('User information:', res.user);
-   })
-   .catch(error => {
-     console.error('Login error:', error.code, error.message);
+    toast.success('User logged in successfully');
+    Navigate('/')
+})
+.catch(error => {
+    toast.error(error.message)
    });
  
 }
@@ -67,7 +70,11 @@ const handleSubmit = event =>{
               <div className="form-control mt-6">
                 <button type="submit" className="btn btn-primary">Login</button>
               </div>
-      <GoogleLogin></GoogleLogin>
+              <div>Do not have an account. Please<Link className="font-bold text-blue-700" to='/login'>Register</Link></div>
+              <div className="flex justify-center items-center ">
+
+      <GoogleLogin  ></GoogleLogin>
+              </div>
             </form>
           </div>
         </div>

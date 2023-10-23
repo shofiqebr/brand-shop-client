@@ -1,6 +1,8 @@
 
 import { useContext } from 'react';
 import { AuthContext } from './../../authProvider/AuthProvider';
+import toast from 'react-hot-toast';
+import { Navigate } from 'react-router-dom';
 
 const GoogleLogin = () => {
 
@@ -8,8 +10,13 @@ const {googleLogin} = useContext(AuthContext);
 
 const handleGoogleLogin = (media) =>{
     media()
-    .then(res => console.log(res))
-    .catch(err=>console.log(err))
+    .then(res => {
+        toast.success('User logged in successfully');
+        Navigate('/')
+    })
+    .catch(error => {
+        toast.error(error.message)
+    })
 }
 
     return (

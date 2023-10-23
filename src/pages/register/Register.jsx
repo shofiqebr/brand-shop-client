@@ -3,6 +3,7 @@ import { useContext,  } from "react";
 import GoogleLogin from "../../components/googleLogin/GoogleLogin";
 import { AuthContext } from "../../authProvider/AuthProvider";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const {createUser} = useContext(AuthContext);
@@ -33,8 +34,17 @@ const Register = () => {
       return;
     }
     createUser(email,password)
-    .then(res => console.log(res.user))
-    .catch(error=>console.log(error))
+    .then(res => {
+      handleUpdateProfile(name, img)
+          .then(() => {
+              toast.success('User created successfully');
+              navigate('/')
+
+          })
+  })
+  .catch(error => {
+    toast.error(error.message)
+})
 
  
   };
@@ -103,7 +113,11 @@ const Register = () => {
               <div className="form-control mt-6">
                 <button type='submit' className="btn btn-primary">Register</button>
               </div>
+              <div>Already have an account. Please<Link className="font-bold text-blue-700" to='/login'>Login</Link></div>
+              <div className="flex justify-center items-center ">
+
       <GoogleLogin></GoogleLogin>
+              </div>
             </form>
           </div>
         </div>

@@ -10,6 +10,7 @@ const googleProvider = new GoogleAuthProvider()
 const AuthProvider = ({children}) => {
     const [brands, setBrands] = useState([]);
     const [user,setUser] = useState({})
+    const [loading, setLoading] = useState(true)
    useEffect(() => {
       fetch("/data.json")
         .then((res) => res.json())
@@ -17,14 +18,17 @@ const AuthProvider = ({children}) => {
     }, []);
 
     const googleLogin = () =>{
+      setLoading(true)
       return signInWithPopup(auth,googleProvider)
     }
 
     const createUser = (email,password) => {
+      setLoading(true)
       return createUserWithEmailAndPassword(auth,email,password)
     }
 
       const signIn = (email,password)=>{
+        setLoading(true)
         return signInWithEmailAndPassword(auth,email,password)
       }
 
@@ -36,6 +40,7 @@ const AuthProvider = ({children}) => {
       useEffect(()=>{
         onAuthStateChanged(auth,(user)=>{
           setUser(user)
+          setLoading(false)
         })
       },[])
       console.log(user);
@@ -47,7 +52,8 @@ const AuthProvider = ({children}) => {
         createUser,
         signIn,
         logOut,
-        user
+        user,
+        loading
     }
 
     return (
