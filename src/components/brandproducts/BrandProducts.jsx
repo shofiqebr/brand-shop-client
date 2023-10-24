@@ -22,16 +22,20 @@ const BrandProducts = () => {
  
   return (
     <div>
-      
+      <div className="my-20">
+
       <Slider1></Slider1>
-      {cars.length}
+      </div>
+    <div className="grid grid-cols-1 gap-10 justify-center items-center">
+
       {filteredCars.length > 0 ? (
         filteredCars.map((car) => (
           <CarCard key={car._id} car={car}></CarCard>
         ))
       ) : (
-        <p>No cars available for {brandName}.</p>
+        <p className="text-5xl text-center font-semibold my-20">No cars available for {brandName}.</p>
       )}
+    </div>
     </div>
   );
 };
