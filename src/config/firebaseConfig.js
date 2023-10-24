@@ -6,7 +6,7 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 
-console.log('inside',import.meta.env.VITE_PASS);
+
 
 
 const firebaseConfig = {
