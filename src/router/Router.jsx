@@ -12,8 +12,14 @@ import MyCart from "../pages/myCart/MyCart";
 
 import NotFound from "../pages/notfound/NotFound";
 
-import BrandProducts from "../components/BrandProducts";
-// import Navbar from "../components/navbar/Navbar";
+
+import BrandProducts from './../components/brandproducts/BrandProducts';
+
+
+
+
+
+
 
 
 
@@ -27,10 +33,7 @@ import BrandProducts from "../components/BrandProducts";
                 path: '/',
                 element:<Home/>,
             },
-            // {
-            //     path : '/navbar',
-            //     element: <Navbar/>,
-            // },
+        
             {
                 path: '/login',
                 element: <Login></Login>
@@ -48,8 +51,9 @@ import BrandProducts from "../components/BrandProducts";
                 element: <MyCart></MyCart>,
             },
             {
-                path: '/brandProducts/:id',
+                path: '/brandproducts/:brandName',
                 element:<BrandProducts></BrandProducts>,
+                loader: () => fetch('http://localhost:5000/car')
             },
           
               ]

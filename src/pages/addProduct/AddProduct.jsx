@@ -1,3 +1,5 @@
+import Swal from "sweetalert2";
+
 const AddProduct = () => {
     const handleAddCar = event => {
         event.preventDefault();
@@ -25,14 +27,14 @@ const AddProduct = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                // if(data.insertedId){
-                //     Swal.fire({
-                //         title: 'Success!',
-                //         text: 'Coffee Added Successfully',
-                //         icon: 'success',
-                //         confirmButtonText: 'Cool'
-                //       })
-                // }
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Coffee Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
             })
     }
   return (
@@ -61,7 +63,7 @@ const AddProduct = () => {
         <div className="flex justify-around">
           <div className="form-control">
             <input
-              type="number"
+              type="text"
               placeholder="Price"
               name="price"
               className="p-3 m-2 border-b-2 w-[600px] max-w-xs"
@@ -81,7 +83,7 @@ const AddProduct = () => {
         <div className="flex justify-around">
           <div className="form-control">
             <input
-              type="number"
+              type="text"
               placeholder="rating"
               name="rating"
               className="p-3 m-2 border-b-2 w-[600px] max-w-xs"
