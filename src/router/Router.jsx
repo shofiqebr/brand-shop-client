@@ -14,6 +14,7 @@ import NotFound from "../pages/notfound/NotFound";
 
 
 import BrandProducts from './../components/brandproducts/BrandProducts';
+import CarDetail from "../components/cardetail/CarDetail";
 
 
 
@@ -53,8 +54,13 @@ import BrandProducts from './../components/brandproducts/BrandProducts';
             {
                 path: '/brandproducts/:brandName',
                 element:<BrandProducts></BrandProducts>,
-                loader: () => fetch('http://localhost:5000/car')
+                loader: () => fetch(' https://automotive-brand-shop-serverside-4h7p7nxyj.vercel.app/car')
             },
+            {
+                path: '/cardetail/:id',
+                element: <CarDetail></CarDetail>,
+                loader: ({params}) => fetch(` https://automotive-brand-shop-serverside-4h7p7nxyj.vercel.app/car/${params.id}`)
+            }
           
               ]
     
