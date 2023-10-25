@@ -1,12 +1,37 @@
-import { useLoaderData } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLoaderData } from "react-router-dom";
 
 const CarDetail = () => {
     const car = useLoaderData();
+    const [cart, setCart] = useState([]);
     
     const {_id, name, photo, 
         brandName, 
         price, 
         ShortDescription, type, rating}= car;
+
+
+        const handleAddToCart = async () => {
+          try {
+            // Send a POST request to your server to save the car data to the cart
+            const response = await fetch('/https://automotive-brand-shop-serverside-4h7p7nxyj.vercel.app/addToCart', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(car),
+            });
+      
+            if (response.ok) {
+              // If the request was successful, add the car to the local cart state
+              setCart([...cart, car]);
+            } else {
+              console.error('Error adding car to cart');
+            }
+          } catch (error) {
+            console.error(error);
+          }
+        }
   return (
     <div className="flex justify-center items-center">
       <div className="card text-center w-[500px] bg- glass">
@@ -15,9 +40,9 @@ const CarDetail = () => {
           {name}
         </div>
         <figure>
-          <img
+          <img 
             src={photo}
-            className="rounded-lg"
+            className="h-96 w-80 rounded-lg"
             alt="car!"
           />
         </figure>
@@ -26,7 +51,11 @@ const CarDetail = () => {
           <p>{ShortDescription}</p>
           <p>Rating: {rating}</p>
           <div className="card-actions justify-end">
+
+            <Link to={`/myCart/${_id}`}>
+            
             <button className="btn btn-primary">Add to Cart</button>
+            </Link>
           </div>
         </div>
       </div>

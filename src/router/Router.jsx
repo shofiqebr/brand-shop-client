@@ -8,13 +8,15 @@ import Home from "../pages/Home";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import AddProduct from "../pages/addProduct/AddProduct";
-import MyCart from "../pages/myCart/MyCart";
+
 
 import NotFound from "../pages/notfound/NotFound";
 
 
 import BrandProducts from './../components/brandproducts/BrandProducts';
 import CarDetail from "../components/cardetail/CarDetail";
+import Update from "../components/update/Update";
+import MyCart from './../pages/myCart/MyCart';
 
 
 
@@ -50,6 +52,8 @@ import CarDetail from "../components/cardetail/CarDetail";
             {
                 path: '/myCart',
                 element: <MyCart></MyCart>,
+                loader: () => fetch(' https://automotive-brand-shop-serverside-4h7p7nxyj.vercel.app/car')
+
             },
             {
                 path: '/brandproducts/:brandName',
@@ -60,6 +64,16 @@ import CarDetail from "../components/cardetail/CarDetail";
                 path: '/cardetail/:id',
                 element: <CarDetail></CarDetail>,
                 loader: ({params}) => fetch(` https://automotive-brand-shop-serverside-4h7p7nxyj.vercel.app/car/${params.id}`)
+            },
+            {
+                path:'/update/:id',
+                element:<Update></Update>,
+                loader:({params}) => fetch(` https://automotive-brand-shop-serverside-4h7p7nxyj.vercel.app/car/${params.id}`)
+            },
+            {
+                path:'/myCart/:id',
+                element: <MyCart></MyCart>,
+                loader:({params}) => fetch(` https://automotive-brand-shop-serverside-4h7p7nxyj.vercel.app/car/${params.id}`)
             }
           
               ]
